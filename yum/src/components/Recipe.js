@@ -3,8 +3,23 @@ import Card from './Card'
 
 const Recipe = props => {
   const {viewRef, viewTarget, addRef, addTarget, name, image} = props.recipe
+  const recipeActions = {
+    number: 2,
+    actions: [
+      {
+        name: "view",
+        label: "View Recipe",
+        onClick: props.openModal
+      },
+      {
+        name: "add",
+        label: "Add to Menu",
+        onClick: props.openModal
+      }
+    ]
+  }
   return(
-      <Card title={name} type={"recipe"}>
+      <Card title={name} type={"recipe"} actions={recipeActions} key={props.key}>
         {image
           ? (
               <a href={viewRef} target={viewTarget}>
@@ -21,23 +36,6 @@ const Recipe = props => {
             )
           : (null)
         }
-        <div className="recipe-actions">
-          <div className="view">
-            <a href={viewRef} target={viewTarget}>
-              <div className="recipe-view">
-                View Recipe
-              </div>
-            </a>
-          </div>
-          <div className="add">
-            <a href={addRef} target={addTarget}>
-              <div className="recipe-view">
-                Add to Menu
-              </div>
-            </a>
-          </div>
-        </div>
-        
       </Card>
   )
 }
