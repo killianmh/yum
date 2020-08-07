@@ -29,24 +29,9 @@ const RecipeList = props => {
       type={"recipe"} 
       actions={recipeActions} 
       key={id}
-      openModal={props.openModal}>
-      {recipe.image
-        ? (
-            <a href={viewRef} target={viewTarget}>
-              <picture>
-                <source srcset="small.jpg"
-                        media="(max-width: 639px)" />
-                <source srcset="medium.jpg"
-                        media="(min-width: 640px) and (max-width: 1023px)" />
-                <source srcset="large.jpg"
-                        media="(min-width: 1024px)" />
-                <img src="large.jpg" alt="My image" />
-              </picture>
-            </a>
-          )
-          : (null)
-        }
-        </Card>
+      openModal={props.openModal}
+      image={recipe.image}>
+    </Card>
   )
 
   return(

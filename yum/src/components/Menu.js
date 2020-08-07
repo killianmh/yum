@@ -55,7 +55,9 @@ const Menu = props => {
   return (
     <div className="menu">
       <h2>Add {props.recipe.name} to your menu</h2>
-      {days}
+      <div className="day-cont">
+        {days}
+      </div>
     </div>
   )
 }

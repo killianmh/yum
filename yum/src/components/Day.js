@@ -1,24 +1,33 @@
 import React from 'react'
-// import './Day.css'
+import './Day2.css'
 import Card from './Card'
 
 const Day = props => {
   return (
-    <Card title={props.title} type={"day"} recipe={props.recipe}>
-      {props.recipe ? 
-        (
-          <div>
-            {props.recipe.name}
-          </div>
-        )
-        :(
-          <div>
-            <button onClick={() => props.add(props.chosenRecipe, props.title)}>
-              Add
-            </button>
-          </div>
-        )}
-    </Card>
+    <div className="day">
+      <h2>
+        {props.title}
+      </h2>
+      <div className="underline"></div>
+      <div className="box">
+        {props.recipe ? 
+          (
+            <div>
+              {props.recipe.name}
+            </div>
+          )
+          :(
+            <div>
+              <button onClick={() => props.add(props.chosenRecipe, props.title)}>
+                <i className="fas fa-plus" />
+              </button>
+            </div>
+          )}
+      </div>
+    </div>
+    // <Card title={props.title} type={"day"} recipe={props.recipe}>
+      
+    // </Card>
     // <div className="day">
     //   <div className="day-header">
     //     <h2>{props.title}</h2>

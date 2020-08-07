@@ -1,13 +1,12 @@
 .menu {
-  padding: 30px 20px;
-  border-bottom: 10px solid rgba(61, 40, 62,1);
+
 }
 
 @media (min-width: 641px) {
-  .menu {
+  .menu .day-cont{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }
 

@@ -2,12 +2,14 @@
   max-width: 250px;
   margin: 0 auto 20px;
   min-height: 300px;
-  border: 1px solid rgba(0,0,0,0.125);
-  border-radius: 20px;
+  /* border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 20px; */
   box-shadow: 5px 5px 5px #666;
   background-color: rgba(0,0,0,0.125);
   background-color: rgba(237, 247, 246, 1);
   transition: 0.15s box-shadow;
+  background-size: cover;
+  background-position: center;
 }
 
 .card:last-child {
@@ -16,8 +18,8 @@
 
 .card-header {
   padding: 10px;
-  border-radius: calc(20px - 1px) calc(20px - 1px) 0 0;
-  background-color: rgba(70, 155, 146, 1);
+  /* border-radius: calc(20px - 1px) calc(20px - 1px) 0 0; */
+  background-color: rgba(70, 155, 146, 0.8);
 }
 .card-header h2 {
   margin-top: 0;
@@ -25,11 +27,6 @@
   color: #ffffff;
 }
 
-.card-recipe:hover {
-  cursor: pointer;
-  box-shadow: 0 0 15px #000000;
-  transition: 0.15s box-shadow;
-}
 .card.card-recipe {
   display: flex;
   flex-direction: column;
@@ -48,7 +45,15 @@
 .card.card-recipe .card-footer {
   display: flex;
   justify-content: space-between;
-  
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+.card-recipe:hover .card-footer{
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s opacity;
+  /* box-shadow: 0 0 15px #000000;
+  transition: 0.15s box-shadow; */
 }
 .card.card-recipe .card-footer > * {
   flex: 1 1 auto;
@@ -61,10 +66,10 @@
   transition: 0.3s background-color;
 }
 .card.card-recipe .card-footer > button:first-child {
-  border-radius: 0 0 0 calc(20px - 1px);
+  /* border-radius: 0 0 0 calc(20px - 1px); */
 }
 .card.card-recipe .card-footer > button:last-child {
-  border-radius: 0 0 calc(20px - 1px) 0;
+  /* border-radius: 0 0 calc(20px - 1px) 0; */
 }
 .card.card-recipe .card-footer button {
   border:none;

@@ -5,6 +5,10 @@ import Menu from './components/Menu'
 import RecipeList from './components/RecipeList'
 import Modal from 'react-modal';
 
+import small from './images/small.jpg'
+import medium from './images/medium.jpg'
+import large from './images/large.jpg'
+
 Modal.setAppElement('#root')
 
 function App() {
@@ -16,7 +20,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: small
       }, 
       {
         name: "pudding2", 
@@ -24,7 +28,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: false
+        image: small
       }, 
       {
         name: "pudding3", 
@@ -32,7 +36,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: medium
       }, 
       {
         name: "pudding4", 
@@ -40,7 +44,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: large
       }, 
       {
         name: "pudding5", 
@@ -48,7 +52,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: large
       }, 
       {
         name: "pudding6", 
@@ -56,7 +60,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: medium
       }, 
       {
         name: "pudding7", 
@@ -64,7 +68,7 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: small
       }, 
       {
         name: "pudding8", 
@@ -72,8 +76,40 @@ function App() {
         viewTarget: "_blank",
         addRef: "/",
         addTarget: "_self",
-        image: true
+        image: large
       }, 
+      {
+        name: "pudding9", 
+        viewRef: "#", 
+        viewTarget: "_blank",
+        addRef: "/",
+        addTarget: "_self",
+        image: large
+      },
+      {
+        name: "pudding10", 
+        viewRef: "#", 
+        viewTarget: "_blank",
+        addRef: "/",
+        addTarget: "_self",
+        image: small
+      },
+      {
+        name: "pudding11", 
+        viewRef: "#", 
+        viewTarget: "_blank",
+        addRef: "/",
+        addTarget: "_self",
+        image: medium
+      },
+      {
+        name: "pudding12", 
+        viewRef: "#", 
+        viewTarget: "_blank",
+        addRef: "/",
+        addTarget: "_self",
+        image: small
+      },
     ]
   
   const [modalIsOpen, setIsOpen] = React.useState(false)
