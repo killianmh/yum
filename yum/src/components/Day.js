@@ -12,16 +12,14 @@ const Day = props => {
       <div className="box">
         {props.recipe ? 
           (
-            <div>
+            <div className="recipeImg" style={{backgroundImage: "url(" + props.recipe.image + ")"}}>
               {props.recipe.name}
             </div>
           )
           :(
-            <div>
               <button onClick={() => props.add(props.chosenRecipe, props.title)}>
                 <i className="fas fa-plus" />
               </button>
-            </div>
           )}
       </div>
     </div>

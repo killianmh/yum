@@ -2,6 +2,10 @@ import React from 'react';
 import Day from './Day'
 import './Menu.css'
 
+import small from '../images/small.jpg'
+import medium from '../images/medium.jpg'
+import large from '../images/large.jpg'
+
 const Menu = props => {
 
   const testMenu = 
@@ -24,8 +28,8 @@ const Menu = props => {
           viewTarget: "_blank",
           addRef: "/",
           addTarget: "_self",
-          image: true
-        }
+          image: small
+        }, 
     },
     {
       day: "Thursday"

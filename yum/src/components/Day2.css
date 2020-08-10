@@ -6,16 +6,42 @@
   display: flex;
   flex-direction: column;
 }
+.day:hover {
+  cursor: pointer;
+}
 .day h2 {
   margin-top: 0;
+  margin-bottom: 0;
+}
+.day .underline {
+  width: 0;
+  margin: 0 auto 10px;
+  height: 3px;
+  background-color: rgba(70, 155, 146, 1);
+  transition: 0.3s width; 
+}
+.day:hover .underline {
+  width: 80%;
+  margin: 0 auto 10px;
+  height: 3px;
+  background-color: rgba(70, 155, 146, 1); 
+  transition: 0.3s width;
 }
 .day .box {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
 }
-.day .box button{
+.day .box .recipeImg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.day .box button {
+  width: 100%;
+  height: 100%;
   background: none;
   border: none;
   font-size: 48px;
@@ -23,7 +49,10 @@
   opacity: 0.2;
   transition: 0.3s opacity;
 }
-.day:hover .box button{
+.day .box button:hover {
+  cursor: pointer;
+}
+.day:hover .box button {
   opacity: 1;
   transition: 0.3s opacity;
 }
