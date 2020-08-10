@@ -1,5 +1,4 @@
 import React from 'react';
-import Recipe from './Recipe'
 import Card from './Card'
 import './RecipeList.css'
 
@@ -38,6 +37,15 @@ const RecipeList = props => {
     <div>
       <div className="recipe-list">
         {recipeList}
+        <Card
+          title={"Add"}
+          type={"add"}>
+            <button 
+              className="addButton"
+              onClick={() => props.newRecipe("New Recipe", 3)}>
+                <i className="fas fa-plus" />
+            </button>
+        </Card>
       </div>
     </div>
   )

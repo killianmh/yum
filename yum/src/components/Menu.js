@@ -8,52 +8,60 @@ import large from '../images/large.jpg'
 
 const Menu = props => {
 
-  const testMenu = 
-  [
-    {
-      day: "Sunday"
-    }, 
-    {
-      day: "Monday"
-    },
-    {
-      day: "Tuesday"
-    },
-    {
-      day: "Wednesday",
-      recipe: 
-        {
-          name: "pudding7", 
-          viewRef: "#", 
-          viewTarget: "_blank",
-          addRef: "/",
-          addTarget: "_self",
-          image: small
-        }, 
-    },
-    {
-      day: "Thursday"
-    },
-    {
-      day: "Friday"
-    },
-    {
-      day: "Saturday"
-    },
-  ]
+  // const testMenu = 
+  // [
+  //   {
+  //     day: "Sunday"
+  //   }, 
+  //   {
+  //     day: "Monday"
+  //   },
+  //   {
+  //     day: "Tuesday"
+  //   },
+  //   {
+  //     day: "Wednesday",
+  //     recipe: 
+  //       {
+  //         name: "pudding7", 
+  //         viewRef: "#", 
+  //         viewTarget: "_blank",
+  //         addRef: "/",
+  //         addTarget: "_self",
+  //         image: small
+  //       }, 
+  //   },
+  //   {
+  //     day: "Thursday"
+  //   },
+  //   {
+  //     day: "Friday"
+  //   },
+  //   {
+  //     day: "Saturday"
+  //   },
+  // ]
 
-  const [menu, setMenu] = React.useState(testMenu)
+  // const [menu, setMenu] = React.useState(testMenu)
 
-  const addToMenu = (recipe, day) => {
-    let newMenu = menu.map(item => {
-      if(item.day !== day) return item 
-      return {...item, recipe: recipe}
-    })
-    setMenu(newMenu)
-  }
+  // const addToMenu = (recipe, day) => {
+  //   let newMenu = props.menu.map(item => {
+  //     if(item.day !== day) return item 
+  //     return {...item, recipe: recipe}
+  //   })
+  //   props.setMenu(newMenu)
+  // }
 
-  const days = menu.map((day, i) => 
-    <Day key={i} title={day.day} recipe={day.recipe} add={addToMenu} chosenRecipe={props.recipe}/>
+  const days = props.menu.map((day, i) => 
+    <Day 
+      key={i} 
+      id={i}
+      title={day.day} 
+      recipe={day.recipe} 
+      add={props.addToMenu} 
+      remove={props.removeFromMenu}
+      chosenRecipe={props.recipe}
+    />
   )
 
   return (

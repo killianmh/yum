@@ -1,13 +1,10 @@
 .menu {
 
 }
-
-@media (min-width: 641px) {
-  .menu .day-cont{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-  }
+.menu .day-cont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 @media (min-width: 1300px) {

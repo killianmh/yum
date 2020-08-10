@@ -13,12 +13,23 @@ const Day = props => {
         {props.recipe ? 
           (
             <div className="recipeImg" style={{backgroundImage: "url(" + props.recipe.image + ")"}}>
-              {props.recipe.name}
+              <div className="header">
+                {props.recipe.name}
+              </div>
+              <div className="remove">
+                <button 
+                  className="removeButton"
+                  onClick={(e) => props.remove(e, props.id)}>
+                  remove
+                </button>
+              </div>
             </div>
           )
           :(
-              <button onClick={() => props.add(props.chosenRecipe, props.title)}>
-                <i className="fas fa-plus" />
+              <button 
+                className="addButton"
+                onClick={() => props.add(props.chosenRecipe, props.title)}>
+                  <i className="fas fa-plus" />
               </button>
           )}
       </div>

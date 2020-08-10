@@ -5,10 +5,17 @@ import './Card.css'
 const Card = props => {
   let cardClass
   let renderedActions
-  const {actions} = props.actions
+  let viewClass, addClass, onClickView, onClickAdd
+  if (props.actions) {
+    const {actions} = props.actions
+    viewClass = actions[0].name
+    onClickView = actions[0].onClick
+    addClass = actions[1].name
+    onClickAdd = actions[1].onClick
+  }
   switch (props.type) {
-    case "day":
-      cardClass = "card card-day"
+    case "add":
+      cardClass = "card card-add"
       break
     case "recipe":
       cardClass = "card card-recipe"
@@ -34,14 +41,18 @@ const Card = props => {
       <div className="inner">
         {props.children}
       </div>
-      <div className="card-footer">
-        <button className={actions[0].name} onClick={() => actions[0].onClick(props.title, 0)}>
-          <i className="fas fa-edit" />
-        </button>
-        <button className={actions[1].name} onClick={() => actions[1].onClick(props.title, 1)}>
-          <i className="fas fa-plus" />
-        </button>
-      </div>
+      {props.actions ?
+        (<div className="card-footer">
+          <button className={viewClass} onClick={() => onClickView(props.title, 0)}>
+            <i className="fas fa-search-plus" />
+          </button>
+          <button className={addClass} onClick={() => onClickAdd(props.title, 1)}>
+            <i className="fas fa-plus" />
+          </button>
+        </div>) 
+        : (null)
+      }
+      
       {/* {renderedActions ?
         (
           <div className="card-footer">
