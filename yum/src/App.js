@@ -5,6 +5,7 @@ import Menu from './components/Menu'
 import Recipe from './components/Recipe'
 import RecipeList from './components/RecipeList'
 import Modal from 'react-modal';
+import Firebase, { FirebaseContext, database } from './components/Firebase'
 
 import small from './images/small.jpg'
 import medium from './images/medium.jpg'
@@ -325,25 +326,27 @@ function App() {
   }
   
     return (
-    <div className="App">
-      {/* <Header>
-        <Nav></Nav>
-      </Header> */}
-      {/* <Menu /> */}
-      <Modal
-        isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={modalStyles}
-        contentLabel="Example Modal"
-      >
-        {generateModalContent()}
-      </Modal>
-      <RecipeList 
-        recipes={testRecipes} 
-        openModal={openModal}
-        newRecipe={openModal}/>
-    </div>
+    <FirebaseContext.Provider value={database}>
+      <div className="App">
+        {/* <Header>
+          <Nav></Nav>
+        </Header> */}
+        {/* <Menu /> */}
+        <Modal
+          isOpen={modalIsOpen}
+          // onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={modalStyles}
+          contentLabel="Example Modal"
+        >
+          {generateModalContent()}
+        </Modal>
+        <RecipeList 
+          recipes={testRecipes} 
+          openModal={openModal}
+          newRecipe={openModal}/>
+      </div>
+    </FirebaseContext.Provider>
   );
 }
 

@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Card from './Card'
 import './RecipeList.css'
+import { FirebaseContext } from './Firebase'
 
 
 const RecipeList = props => {
+  const database = useContext(FirebaseContext)
+
+  const addToMenu = (userId, name, email) => {
+    console.log('pressed')
+    database.ref('users/' + userId).set({
+      username: name,
+      email: email
+    });
+  }
+
   const recipes = props.recipes
   const {viewRef, viewTarget, addRef, addTarget, name, image} = props
   const recipeActions = {
@@ -46,6 +57,11 @@ const RecipeList = props => {
                 <i className="fas fa-plus" />
             </button>
         </Card>
+        <button
+          className="firebaseTest"
+          onClick={() => addToMenu(1, "matt", "test@test.com")}>
+
+        </button>
       </div>
     </div>
   )
