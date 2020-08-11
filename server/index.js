@@ -3,7 +3,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const path = require("path");
-app.use(express.static(path.join(__dirname, "yum", "build")));
+app.use(express.static(path.join(__dirname, "../yum", "build")));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
