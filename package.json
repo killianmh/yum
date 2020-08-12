@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-client": "cd yum && yarn build",
-    "start-server": "cd server && yarn start",
+    "build-client": "cd yum && yarn install && yarn build",
+    "start-server": "cd server && yarn install && yarn start",
     "start": "yarn build-client && yarn start-server",
     "start-dev": "cd yum && yarn start"
   },
