@@ -2,9 +2,9 @@ import React from 'react';
 import Day from './Day'
 import './Menu.css'
 
-import small from '../images/small.jpg'
-import medium from '../images/medium.jpg'
-import large from '../images/large.jpg'
+// import small from '../images/small.jpg'
+// import medium from '../images/medium.jpg'
+// import large from '../images/large.jpg'
 
 const Menu = props => {
 
