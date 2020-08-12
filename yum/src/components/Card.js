@@ -4,10 +4,11 @@ import './Card.css'
 
 const Card = props => {
   let cardClass
-  let renderedActions
+  // let renderedActions
   let viewClass, addClass, onClickView, onClickAdd
   if (props.actions) {
     const {actions} = props.actions
+    console.log(actions)
     viewClass = actions[0].name
     onClickView = actions[0].onClick
     addClass = actions[1].name
@@ -52,16 +53,6 @@ const Card = props => {
         </div>) 
         : (null)
       }
-      
-      {/* {renderedActions ?
-        (
-          <div className="card-footer">
-            {renderedActions}
-          </div>
-        )
-        :(null)
-      } */}
-      
     </div>
   )
 }

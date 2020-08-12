@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd yum && yarn build && (cd ../server && yarn start)"
+    "build-client": "cd yum && yarn build",
+    "start-server": "cd server && yarn start",
+    "start": "yarn build-client && yarn start-server",
+    "start-dev": "cd yum && yarn start"
   },
   "repository": {
     "type": "git",

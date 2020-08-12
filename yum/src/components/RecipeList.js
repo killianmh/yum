@@ -16,7 +16,7 @@ const RecipeList = props => {
   }
 
   const recipes = props.recipes
-  const {viewRef, viewTarget, addRef, addTarget, name, image} = props
+  // const {viewRef, viewTarget, addRef, addTarget, name, image} = props
   const recipeActions = {
     number: 2,
     actions: [

@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Menu from './components/Menu'
 import Recipe from './components/Recipe'
 import RecipeList from './components/RecipeList'
 import Modal from 'react-modal';
-import Firebase, { FirebaseContext, database } from './components/Firebase'
+import { FirebaseContext, database } from './components/Firebase'
 
 import small from './images/small.jpg'
 import medium from './images/medium.jpg'
@@ -264,12 +264,11 @@ function App() {
     setIsOpen(false)
   }
   const generateModalContent = () => {
+    let recipe = modalRecipe
+    console.log(modalIsOpen, modalType, recipe)
     if(modalIsOpen) {
       if(modalType === "recipe"){
-        console.log(modalRecipe)
-        let recipe = modalRecipe
-        console.log(recipe)
-        return (
+        return(
           <div className="modalContent">
             <div className="modalHeader">
               <h2>{recipe.name}</h2>
@@ -280,10 +279,7 @@ function App() {
                 <i className="fas fa-times"></i>
               </button>
             </div>
-            <Recipe 
-              recipe={recipe}
-            >
-            </Recipe>
+            <Recipe recipe={recipe} />
           </div>
         )
       }
